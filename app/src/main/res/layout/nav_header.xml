@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="185dp"
+    android:gravity="bottom"
+    android:padding="16dp"
+
+    android:orientation="vertical"
+    android:background="@color/teal_700"
+    >
+
+    <ImageView
+        android:id="@+id/navHeader_imageID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Navigation Header"
+        android:src="@mipmap/ic_launcher_round"
+        android:paddingTop="8dp"
+        android:scaleType="fitXY"
+        />
+    <TextView
+        android:id="@+id/navHeader_usernameID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanzir Ratul"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/navHeader_emailID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tanzir.ratul@gmail.com"
+        />
+
+
+</LinearLayout>

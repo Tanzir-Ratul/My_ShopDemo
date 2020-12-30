@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Bnav_homeID"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/Bnav_wishlistID"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Wishlist" />
+    <item
+        android:id="@+id/Bnav_cartID"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="Cart" />
+    <item
+        android:id="@+id/Bnav_accountID"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"
+        android:title="Account" />
+</menu>
