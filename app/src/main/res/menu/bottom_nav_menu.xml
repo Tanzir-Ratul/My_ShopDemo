@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/Bnav_homeID"
+        android:id="@+id/action_home"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="Home"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/Bnav_wishlistID"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="Wishlist" />
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="Wishlist"
+    />
     <item
-        android:id="@+id/Bnav_cartID"
+        android:id="@+id/action_cart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="Cart" />
     <item
-        android:id="@+id/Bnav_accountID"
-        android:icon="@drawable/ic_baseline_shopping_bag_24"
-        android:title="Account" />
+        android:id="@+id/action_account"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Account"
+    />
+
+
 </menu>
