@@ -16,24 +16,38 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/appbar" />
+        <FrameLayout
+            android:id="@+id/containerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-       <FrameLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:id="@+id/containerID"
-           />
+            <include layout="@layout/appbar" />
+        </FrameLayout>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/buttom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#120D12"
+            android:gravity="bottom"
+            app:itemIconTint="#651FFF"
+            app:itemTextColor="#F8F6F6"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationID"
@@ -43,16 +57,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/buttom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#2B2626"
-            android:layout_alignParentBottom="true"
-            app:itemIconTint="#CF5555"
-            app:itemTextColor="#CF5555"
-            app:menu="@menu/bottom_nav_menu"/>
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

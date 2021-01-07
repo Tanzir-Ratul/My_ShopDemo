@@ -26,21 +26,21 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
-    private Toolbar toolbar;
     NavigationView navigationView;
-//    ViewPager and BottomNavigationMenuView
-    private BottomNavigationView mBottomNavigation;
-    private ViewPager viewPager;
-    private ViewPagerAdapter mViewPagerAdapter;
     MenuItem prevMenuItem;
     ProfileFragment profileFragment;
     WishlistFragment wishlistFragment;
     HomeFragment homeFragment;
     CartFragment cartFragment;
+    private Toolbar toolbar;
+    //    ViewPager and BottomNavigationMenuView
+    private BottomNavigationView mBottomNavigation;
+    private ViewPager viewPager;
+    private ViewPagerAdapter mViewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId()){
-//                    ase R.id.
+                switch (item.getItemId()) {
+
                 }
 
                 return true;
@@ -96,12 +96,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             public void onPageSelected(int position) {
                 if (prevMenuItem != null) {
                     prevMenuItem.setChecked(false);
-                }
-                else
-                {
+                } else {
                     mBottomNavigation.getMenu().getItem(0).setChecked(false);
                 }
-                Log.d("page", "onPageSelected: "+position);
+                Log.d("page", "onPageSelected: " + position);
                 mBottomNavigation.getMenu().getItem(position).setChecked(true);
                 prevMenuItem = mBottomNavigation.getMenu().getItem(position);
 
@@ -144,13 +142,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment selectedFragment = null;
         switch (item.getItemId()) {
             case R.id.action_home:
-                viewPager.setCurrentItem(1);
-                return true;
-            case R.id.action_favorites:
                 viewPager.setCurrentItem(0);
                 return true;
-            case R.id.action_account:
+            case R.id.action_favorites:
+                viewPager.setCurrentItem(1);
+                return true;
+            case R.id.action_cart:
                 viewPager.setCurrentItem(2);
+                return true;
+            case R.id.action_account:
+                viewPager.setCurrentItem(3);
                 return true;
             default:
                 return false;
