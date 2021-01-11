@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.shop.Adapters.ViewPagerAdapter;
@@ -36,8 +38,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     WishlistFragment wishlistFragment;
     HomeFragment homeFragment;
     CartFragment cartFragment;
+
     private Toolbar toolbar;
-    //    ViewPager and BottomNavigationMenuView
+    //ViewPager and BottomNavigationMenuView
     private BottomNavigationView mBottomNavigation;
     private ViewPager viewPager;
     private ViewPagerAdapter mViewPagerAdapter;
@@ -62,15 +65,36 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                Fragment fragment = null;
                 switch (item.getItemId()) {
+
+                    case R.id.nav_homeId:
+                        fragment = homeFragment;
+                        break;
+                    case R.id.nav_profileId:
+                        fragment = profileFragment;
+                        break;
+                    case R.id.nav_wishlistId:
+                        fragment = wishlistFragment;
+                        break;
 
                 }
 
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                if (fragment != null) {
+
+                    fragmentTransaction.replace(R.id.containerID, fragment).commit();
+                }
                 return true;
             }
         });
 
-        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.containerID, homeFragment);
+//        transaction.commit();
+
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         try {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -78,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             Toast.makeText(this, "Exception " + e, Toast.LENGTH_SHORT).show();
         }
 
-        //    ViewPager and BottomNavigationMenuView
+        // ViewPager and BottomNavigationMenuView
 
         mBottomNavigation = findViewById(R.id.buttom_navigation);
         mBottomNavigation.setOnNavigationItemSelectedListener(this);
